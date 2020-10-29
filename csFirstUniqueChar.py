@@ -11,15 +11,25 @@
 
 def csFirstUniqueChar(input_str):
     # determine uniqe chars
-    unique_chars_set = set(input_str)
-    # unique_chars = ''.join(unique_chars_set)
-    # print(unique_chars)
-    # loop over input_str  checking for characters that match
-    for i in unique_chars_set:
-        if i in input_str:
-            print(unique_chars_set[])
-            
-    
-    
 
+    unique_char = []
+    char_order = []
+    counts = {}
+    first_unique = ''
+
+    for char in input_str:
+        if char in counts:
+            counts[char] += 1
+        else:
+            counts[char] = 1
+            char_order.append(char)
+            
+    for char in char_order:
+        if counts[char] == 1:
+            unique_char.append(char)
+            first_unique = ''.join(unique_char)
+            return input_str.index(first_unique)
+    return -1
+            
 print(csFirstUniqueChar('lambdaschool'))
+print(csFirstUniqueChar('vvv'))
